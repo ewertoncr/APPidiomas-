@@ -18,7 +18,7 @@ icons/                  → ícones 192 / 512 / Apple
 1. Crie um repositório (ex.: `polywork`)
 2. Envie estes arquivos na raiz (ou na branch `gh-pages`)
 3. **Settings → Pages → Source**: branch `main`, pasta `/ (root)`
-4. Abra o link: `https://SEU_USUARIO.github.io/polywork/`
+4. Abra o link: `https://ewertoncr.github.io/APPidiomas-`
 
 > PWA e microfone precisam de **HTTPS** (GitHub Pages já fornece).
 
