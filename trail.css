@@ -1,0 +1,223 @@
+/* ===== TRILHA REMODELADA ===== */
+.path-wrap {
+  padding: 8px 8px 40px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(124,92,255,0.08), transparent 45%),
+    radial-gradient(circle at 80% 60%, rgba(0,200,83,0.06), transparent 40%);
+  border-radius: 20px;
+}
+.unit-card {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  padding: 14px 14px 8px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+}
+.unit-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed var(--border);
+}
+.unit-badge {
+  width: 40px; height: 40px;
+  border-radius: 14px;
+  background: var(--grad);
+  color: #fff;
+  font-weight: 900;
+  font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 0 rgba(80,50,200,0.25);
+}
+.unit-meta { flex: 1; min-width: 0; }
+.unit-meta h3 {
+  font-size: 0.95rem;
+  font-weight: 900;
+  margin: 0 0 2px;
+}
+.unit-meta p {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0;
+}
+.unit-progress {
+  height: 8px;
+  background: var(--card2);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 6px;
+  border: 1px solid var(--border);
+}
+.unit-progress > i {
+  display: block;
+  height: 100%;
+  background: var(--grad);
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+.path {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  position: relative;
+  padding: 4px 0 8px;
+}
+.path-row {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-height: 100px;
+  align-items: center;
+}
+.path-row.shift-left { justify-content: flex-start; padding-left: 12%; }
+.path-row.shift-right { justify-content: flex-end; padding-right: 12%; }
+.path-row.shift-center { justify-content: center; }
+
+.path-node {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  border: 5px solid #dfe7f5;
+  background: #fff;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 6px 0 #c5d0e6;
+}
+[data-theme="ocean"] .path-node,
+[data-theme="neon"] .path-node {
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: 0 6px 0 rgba(0,0,0,0.35);
+}
+.path-node:active:not(.locked) {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #c5d0e6;
+}
+.path-node.done {
+  border-color: #00c853;
+  background: linear-gradient(145deg, #e8fff0, #c8f7d8);
+  box-shadow: 0 6px 0 #00a844;
+}
+.path-node.current {
+  border-color: #7c5cff;
+  background: linear-gradient(145deg, #f0ebff, #ddd2ff);
+  box-shadow: 0 6px 0 #5a3fd4;
+  animation: pulse-node 2s infinite;
+}
+.path-node.locked {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: grayscale(0.6);
+  background: #f1f4f8;
+  box-shadow: 0 6px 0 #d0d7e2;
+}
+.path-node .node-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+.path-node.done .node-icon { font-size: 1.9rem; }
+.path-node-label {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.68rem;
+  font-weight: 800;
+  max-width: 110px;
+  text-align: center;
+  line-height: 1.2;
+  color: var(--muted);
+  white-space: normal;
+}
+.path-node.current .path-node-label,
+.path-node.done .path-node-label { color: var(--text); }
+.path-node-xp {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: var(--grad);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 900;
+  padding: 3px 7px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(124,92,255,0.35);
+}
+.path-node.done .path-node-xp {
+  background: #00c853;
+  box-shadow: 0 2px 6px rgba(0,200,83,0.35);
+}
+.path-node .lock-icon {
+  position: absolute;
+  bottom: -2px;
+  font-size: 0.85rem;
+}
+@keyframes pulse-node {
+  0%, 100% { box-shadow: 0 6px 0 #5a3fd4, 0 0 0 0 rgba(124,92,255,0.25); }
+  50% { box-shadow: 0 6px 0 #5a3fd4, 0 0 0 14px rgba(124,92,255,0.12); }
+}
+.path-connector-wrap {
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.path-connector {
+  width: 6px;
+  height: 22px;
+  border-radius: 6px;
+  background: #d0dbea;
+}
+.path-connector.done {
+  background: linear-gradient(180deg, #00c853, #00e676);
+}
+.trail-hero {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.trail-hero h2 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin: 0 0 4px;
+}
+.trail-hero p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0;
+}
+.trail-stats {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 10px 0 14px;
+}
+.trail-stat-pill {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  box-shadow: var(--shadow);
+}
+.mascot-bar {
+  background: linear-gradient(135deg, rgba(124,92,255,0.08), rgba(0,212,255,0.06)), var(--card);
+}
+.game-stat { border-radius: 18px; }
+.card { border-radius: 20px; }
