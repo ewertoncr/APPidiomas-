@@ -11,7 +11,7 @@ const QUEST_POOL = [
   {id:'q_lesson', icon:'📚', text:'Complete 1 lição', target:1, type:'lessons', reward:{xp:15,gems:5}},
   {id:'q_perfect', icon:'⭐', text:'Lição perfeita', target:1, type:'perfect', reward:{xp:25,gems:10}},
   {id:'q_xp50', icon:'⚡', text:'Ganhe 50 XP hoje', target:50, type:'xp', reward:{xp:20,gems:8}},
-  {id:'q_calls', icon:'📞', text:'Faça 1 ligação', target:1, type:'calls', reward:{xp:15,gems:5}},
+  {id:'q_calls', icon:'📞', text:'Faça 1 prática', target:1, type:'calls', reward:{xp:15,gems:5}},
   {id:'q_combo3', icon:'🔥', text:'Combo de 3 acertos', target:3, type:'combo', reward:{xp:20,gems:8}},
   {id:'q_vocab', icon:'🗣️', text:'Pratique 2 seções de fala', target:2, type:'speak', reward:{xp:15,gems:6}}
 ];
@@ -22,7 +22,9 @@ const SHOP_ITEMS = [
 ];
 
 function ensureGameState() {
+  if (typeof S === 'undefined' || !S) return;
   if (S.gems == null) S.gems = 0;
+  if (S.vip == null) S.vip = false;
   if (S.weeklyXp == null) S.weeklyXp = 0;
   if (S.weekId == null) S.weekId = getWeekId();
   if (S.freeze == null) S.freeze = 0;
