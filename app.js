@@ -1,2 +1,2 @@
-// PolyWork - temporary stub while full file is uploaded
-document.getElementById('root').innerHTML = '<div style="max-width:360px;text-align:center;padding:24px"><h1 style="background:linear-gradient(135deg,#5b8aff,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1.8rem;margin-bottom:12px">PolyWork</h1><p style="color:#8b95a8;margin-bottom:20px">A versão completa da trilha está pronta. O arquivo app.js completo precisa ser colado uma vez no GitHub (limitacao de tamanho no upload automatico).</p><p style="color:#5b8aff;font-size:0.9rem">Baixe PolyWork-TRILHA.html da conversa e use como index.html, ou cole o app.js completo.</p></div>';
+// redirect - use app-logic.js
+console.log('PolyWork app loader');
