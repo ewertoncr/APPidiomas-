@@ -1,6 +1,6 @@
 // ===== VIP (EUR) + MASCOT ASSISTANT =====
-const VIP_PRICE_MONTHLY = '2,99 €';
-const VIP_PRICE_YEARLY = '24,99 €';
+const VIP_PRICE_MONTHLY = '5,99 €';
+const VIP_PRICE_YEARLY = '49,99 €';
 const VIP_PRICE = VIP_PRICE_MONTHLY;
 const FREE_LESSON_LIMIT = 2;
 
@@ -27,8 +27,8 @@ const MASCOT_LINES = {
     'Erros fazem parte. Bora de novo!'
   ],
   vip: [
-    'Com o VIP mensal desbloqueias TUDO por só 2,99 € 👑',
-    'VIP = todas as lições e poderes. Menos que um café!'
+    'Com o VIP mensal desbloqueias TUDO por 5,99 € 👑',
+    'VIP = todas as lições e poderes. Vale a pena!'
   ],
   idle: [
     'Ei! Toca em mim se quiseres uma dica 👋',

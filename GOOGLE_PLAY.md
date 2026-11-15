@@ -2,7 +2,7 @@
 
 ## O que já está pronto no repositório
 - [x] App web/PWA funcional (lições, trilha, gamificação, VIP)
-- [x] Preços VIP em euros (mensal)
+- [x] Preços VIP em euros (mensal **5,99 €**)
 - [x] Política de privacidade (RGPD) → privacy-policy.html
 - [x] Termos de utilização → terms.html
 - [x] Texto da ficha da loja → STORE_LISTING.md
@@ -18,19 +18,22 @@
 6. Criar produto de subscrição:
    - ID: `vip_monthly`
    - Nome: PolyWork VIP Mensal
-   - Preço Portugal: **2,99 EUR**
-   - Opcional: `vip_yearly` a 24,99 EUR
+   - Preço Portugal: **5,99 EUR**
+   - Opcional: `vip_yearly` a **49,99 EUR**
 7. Gerar Android App Bundle (AAB) — ver secção Capacitor abaixo
 8. Preencher Segurança dos dados, anúncios, classificação de conteúdo
 9. Enviar para revisão
 
 ## Empacotar para Android (Capacitor) — no teu PC
 
+> **Nota:** O Capacitor **ainda não está instalado neste repositório**. É uma ferramenta que corres no teu computador para transformar o site num app Android (.aab).
+
 ```bash
+# Na pasta do projeto (depois de clonar o repo)
 npm init -y
 npm install @capacitor/core @capacitor/cli @capacitor/android
 npx cap init "PolyWork" "com.polywork.app"
-# copiar index.html, css, js, icons para a pasta www/
+# Garante que os ficheiros web estão em www/ (ou webDir configurado)
 npx cap add android
 npx cap sync android
 npx cap open android
@@ -39,14 +42,13 @@ npx cap open android
 
 Para faturação real, integra Google Play Billing. Enquanto isso, o botão VIP no app continua em modo demo (ativa VIP localmente).
 
-## Preços recomendados (EUR · Portugal)
+## Preços (EUR · Portugal)
 | Produto | Preço | Notas |
 |---------|-------|--------|
-| VIP Mensal | 2,99 € | Principal |
-| VIP Anual | 24,99 € | Melhor valor (~2,08 €/mês) |
+| VIP Mensal | **5,99 €** | Principal |
+| VIP Anual | **49,99 €** | ~4,17 €/mês |
 
 ## Diferenciação vs apps atuais
 - Assistente Nova interativa (não só um logo)
 - Trilha visual + combos + ligas + baú
-- Preço mensal agressivo (2,99 €)
 - Visual Play/Candy/Neon (público jovem e gamers)
