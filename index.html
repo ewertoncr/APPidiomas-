@@ -12,6 +12,7 @@
 <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 <link rel="stylesheet" href="./styles-play.css?v=2">
+<link rel="stylesheet" href="./trail.css?v=1">
 <title>PolyWork — Aprende idiomas a jogar</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="./content.js"></script>
@@ -100,8 +101,9 @@
     </div>
   </div>
   <div class="screen" id="screen-lessons">
-    <h2 style="font-size:1.1rem;margin-bottom:4px;font-weight:900;text-align:center">🎮 Trilha · <span id="lessonsLangLabel">Inglês</span></h2>
-    <p style="text-align:center;font-size:0.75rem;color:var(--muted);margin-bottom:8px;font-weight:600">Toca na bolinha para jogar</p>
+    <div style="text-align:center;margin-bottom:4px">
+      <span id="lessonsLangLabel" style="font-size:0.8rem;font-weight:800;color:var(--primary)">Inglês</span>
+    </div>
     <div class="path-wrap" id="lessonsPath"></div>
   </div>
   <div class="screen" id="screen-player">
@@ -212,6 +214,7 @@
 <script src="./game-extra.js?v=play4"></script>
 <script src="./vip-mascot.js?v=play4"></script>
 <script src="./app-logic.js?v=play4"></script>
+<script src="./trail-ui.js?v=1"></script>
 <script>
 (function(){
   document.documentElement.setAttribute('data-theme','play');
