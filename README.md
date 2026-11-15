@@ -1,36 +1,49 @@
 # PolyWork
 
-App de idiomas para o trabalho (inglês, francês, espanhol, mandarim e italiano).
+**App de idiomas para o trabalho** — Inglês, Francês, Espanhol, Mandarim e Italiano.
 
-**Versão expandida** — caminho completo estilo Duolingo do básico ao fluente.
+Caminho completo estilo Duolingo: do básico até o fluente, com forte foco em **empregabilidade** (entrevistas, reuniões, negociação, networking).
 
-## O que tem nesta versão
+## Status atual
 
-### Inglês (caminho principal — 30 lições)
-- **Unit 1 · Foundations**: Cumprimentos, How are you, Números/Tempo, Falar de si, Apresentações profissionais, Small talk
-- **Unit 2 · Daily Work**: Pedir ajuda, Agendar reuniões, E-mails, Ligações, Updates de status
-- **Unit 3 · Meetings**: Participar, Conduzir, Discordar educadamente, Dar feedback, Apresentar ideias
-- **Unit 4 · Interviews**: Tell me about yourself, Pontos fortes/fracos, Método STAR, Why this role, Perguntas para o recrutador, Salário
-- **Unit 5 · Business Comm**: E-mails avançados, Estrutura de apresentações, Lidar com perguntas
-- **Unit 6 · Fluent**: Negociação, Conversas difíceis, Networking, Idioms, Conversa fluente
+O arquivo `index.html` completo (com 30 lições em inglês + conteúdo nos 5 idiomas) está pronto.  
+Por limitação técnica de tamanho no canal de atualização automática, o arquivo grande precisa ser colado manualmente uma vez.
+
+**Como colocar a versão completa:**
+1. Baixe o arquivo `PolyWork-index-completo.html` (fornecido na conversa)
+2. No GitHub, abra `index.html` → Edit (lápis)
+3. Substitua todo o conteúdo e faça Commit
+
+Depois disso o app fica 100% funcional.
+
+## O que o app tem
+
+### Inglês — 30 lições em 6 unidades
+- **1 · Foundations** — Cumprimentos, números, tempo, apresentações, small talk
+- **2 · Daily Work** — Pedir ajuda, agendar, e-mails, ligações, updates
+- **3 · Meetings** — Participar, conduzir, discordar, feedback, apresentar ideias
+- **4 · Interviews** — Pitch, pontos fortes/fracos, STAR, perguntas, salário
+- **5 · Business Comm** — E-mails avançados, apresentações, perguntas
+- **6 · Fluent** — Negociação, conversas difíceis, networking, idioms
 
 ### Outros idiomas
-Francês, Espanhol, Mandarim e Italiano com 8+ lições cada + simulações de ligação e entrevista.
+Francês, Espanhol, Mandarim e Italiano com lições de fundamentos + reuniões + entrevistas + simulações de ligação.
 
 ### Gamificação
-- XP, Streak, 7 ranks (Iniciante → Expert)
-- Muitas conquistas (badges)
+- XP + Streak + 7 ranks
+- Conquistas (badges)
 - Unidades organizadas
 - Simulações de ligação (incluindo entrevista e cliente)
-- Temas + PWA
+- Temas + PWA instalável
 
-## Como atualizar o repositório
+## Publicar
 
-O arquivo `index.html` expandido está disponível. Substitua o arquivo atual pelo novo `index.html` completo.
-
-Ou use GitHub Pages: Settings → Pages → Source: main / root
-
+Settings → Pages → Source: `main` / root  
 Link: https://ewertoncr.github.io/APPidiomas-/
 
-## Login
-Progresso fica no localStorage. Google login é simulado (pode integrar Supabase depois).
+## Arquivos
+
+- `index.html` — app principal
+- `manifest.webmanifest` — PWA
+- `sw.js` — service worker
+- `icons/` — ícones
