@@ -1,15 +1,15 @@
 {
-  "name": "PolyWork — Idiomas para o Trabalho",
+  "name": "PolyWork — Aprende idiomas a jogar",
   "short_name": "PolyWork",
-  "description": "Aprenda inglês, francês, espanhol, mandarim e italiano para o trabalho. Lições, ligações por voz e conquistas.",
+  "description": "Aprende inglês, francês, espanhol, mandarim e italiano com trilha, XP e a assistente Nova. VIP desde 2,99 €/mês.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#0b0d12",
-  "theme_color": "#5b8aff",
-  "lang": "pt-BR",
-  "categories": ["education", "productivity"],
+  "background_color": "#f0f7ff",
+  "theme_color": "#7c5cff",
+  "lang": "pt",
+  "categories": ["education", "games"],
   "icons": [
     {
       "src": "./icons/icon-192.png",

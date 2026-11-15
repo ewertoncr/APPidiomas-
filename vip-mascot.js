@@ -1,37 +1,39 @@
-// ===== VIP + MASCOT ASSISTANT =====
-const VIP_PRICE = 'R$ 9,90';
+// ===== VIP (EUR) + MASCOT ASSISTANT =====
+const VIP_PRICE_MONTHLY = '2,99 €';
+const VIP_PRICE_YEARLY = '24,99 €';
+const VIP_PRICE = VIP_PRICE_MONTHLY;
 const FREE_LESSON_LIMIT = 2;
 
 const MASCOT_LINES = {
   greet: [
-    'Oi! Eu sou a Nova, sua parceira de idiomas! 🌟',
-    'E aí! Pronto pra aprender de um jeito divertido?',
-    'Olá! Bora conquistar um novo idioma juntos?'
+    'Olá! Eu sou a Nova — a tua parceira de idiomas! 🌟',
+    'E aí! Pronto para aprender a jogar de verdade?',
+    'Bora conquistar um idioma novo juntos? Eu ajudo!'
   ],
   tip: [
-    'Dica: pratique um pouquinho todo dia. Streak é poder! 🔥',
-    'Toque nas palavras pra ouvir a pronúncia. Seu ouvido agradece!',
-    'Errou? Sem drama! Cada erro te ensina algo novo 💪',
+    'Dica: treina um pouco todos os dias. Streak é poder! 🔥',
+    'Toca nas palavras para ouvir a pronúncia.',
+    'Errou? Sem drama — cada erro ensina. 💪',
     'Combo de acertos dá mais XP. Fica esperto! ⚡'
   ],
   cheer: [
-    'Você está mandando bem! Continua assim! 🎉',
-    'Uau! Que progresso incrível!',
+    'Estás a mandar muito bem! Continua! 🎉',
+    'Uau! Que progresso!',
     'Orgulho total daqui! 🏆'
   ],
   wrong: [
-    'Quase! Tenta de novo, você consegue 💪',
-    'Não desanima! A próxima você acerta!',
+    'Quase! Tenta outra vez — consegues 💪',
+    'Não desistas! A próxima é tua!',
     'Erros fazem parte. Bora de novo!'
   ],
   vip: [
-    'Com o VIP você desbloqueia TUDO e aprende sem limites! 👑',
-    'VIP = todas as lições, idiomas e super poderes. Vale muito!'
+    'Com o VIP mensal desbloqueias TUDO por só 2,99 € 👑',
+    'VIP = todas as lições e poderes. Menos que um café!'
   ],
   idle: [
-    'Ei! Toca em mim se quiser uma dica 😊',
-    'Estou aqui se precisar de ajuda!',
-    'Hmm... que tal uma lição agora?'
+    'Ei! Toca em mim se quiseres uma dica 👋',
+    'Estou aqui se precisares de ajuda!',
+    'Que tal uma lição agora?'
   ]
 };
 
@@ -44,9 +46,10 @@ function canAccessLesson(lessonId) {
   return lessonId <= FREE_LESSON_LIMIT;
 }
 
-function activateVip() {
+function activateVip(plan) {
   if (typeof S === 'undefined') return;
   S.vip = true;
+  S.vipPlan = plan || 'monthly';
   S.vipSince = new Date().toISOString();
   if (typeof save === 'function') save();
   showToast('VIP ativado! Bem-vindo 👑', '👑');
