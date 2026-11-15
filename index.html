@@ -31,7 +31,7 @@
     <div class="login-feat"><span>🎯</span> Trilha de lições interativa</div>
     <div class="login-feat"><span>🔊</span> Áudio em todas as frases</div>
     <div class="login-feat"><span>💼</span> Foco em inglês para o trabalho</div>
-    <div class="login-feat"><span>🏆</span> XP, ranks e conquistas</div>
+    <div class="login-feat"><span>🏆</span> XP, gems, missões e ligas</div>
   </div>
 </div>
 <header id="mainHeader" class="hidden">
@@ -39,6 +39,7 @@
     <div class="logo"><span id="logoFlag">🇬🇧</span> <span>PolyWork</span></div>
     <div class="header-stats">
       <div class="hstat streak" id="hStreak">🔥 0</div>
+      <div class="hstat gems" id="hGems">💎 0</div>
       <div class="hstat xp" id="hXp">⚡ 0</div>
       <div class="user-pill" onclick="showScreen('profile')">
         <div class="user-avatar" id="userAvatar">G</div>
@@ -81,6 +82,12 @@
       <div class="game-stat streak"><div class="val" id="statStreak">0</div><div class="lbl">Streak</div></div>
       <div class="game-stat badges"><div class="val" id="statBadges">0</div><div class="lbl">Conquistas</div></div>
     </div>
+    <div class="card">
+      <div class="card-title">📋 Missões diárias</div>
+      <div id="questsList"></div>
+    </div>
+    <div class="card" id="leagueCard"></div>
+    <div id="dailyChest" style="margin-bottom:10px"></div>
     <div class="card">
       <div class="card-title">Continue de onde parou</div>
       <div class="card-sub" id="dailyGoalText">Complete 1 lição hoje</div>
@@ -131,6 +138,11 @@
       <div class="card-title">Tema</div>
       <div class="theme-grid" id="themeGrid"></div>
     </div>
+    <div class="card">
+      <div class="card-title">🛒 Loja</div>
+      <div class="card-sub">Gaste gems em power-ups</div>
+      <div id="shopList"></div>
+    </div>
     <button class="btn btn-ghost" onclick="logout()" style="margin-top:8px">Sair</button>
   </div>
 </main>
@@ -170,7 +182,17 @@
     <button class="btn btn-primary" onclick="closeCeleb()">Continuar</button>
   </div>
 </div>
+<div class="combo-badge" id="comboBadge">🔥 x2</div>
+<div class="level-up" id="levelUp">
+  <div class="level-up-card">
+    <div class="level-up-title">Novo rank!</div>
+    <div class="level-up-icon" id="levelUpIcon">🚀</div>
+    <div class="level-up-name" id="levelUpName">Avançado</div>
+    <button class="btn btn-primary" onclick="closeLevelUp()">Continuar</button>
+  </div>
+</div>
 <div class="toast" id="toast"></div>
+<script src="./game-extra.js"></script>
 <script src="./app-logic.js"></script>
 </body>
 </html>
