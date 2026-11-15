@@ -2,45 +2,35 @@
 
 App de idiomas para o trabalho (inglês, francês, espanhol, mandarim e italiano).
 
-Lições do **básico ao fluente**, estilo gamificado (XP, streak, ranks, conquistas), simulações de ligação, entrevistas e reuniões. Funciona como **PWA** (instalável na tela inicial).
+**Versão expandida** — caminho completo estilo Duolingo do básico ao fluente.
 
-## O que tem agora
+## O que tem nesta versão
 
-- **Currículo expandido** organizado em unidades (Foundations → Daily Work → Meetings → Interviews → Fluent)
-- 17 lições em inglês + 8 em cada outro idioma
-- Simulações de ligação: colega, reunião, entrevista e cliente
-- Foco forte em empregabilidade (entrevistas STAR, negociação, reuniões)
-- Sistema de XP, ranks, badges e streak
-- Temas personalizáveis
-- PWA offline básico
+### Inglês (caminho principal — 30 lições)
+- **Unit 1 · Foundations**: Cumprimentos, How are you, Números/Tempo, Falar de si, Apresentações profissionais, Small talk
+- **Unit 2 · Daily Work**: Pedir ajuda, Agendar reuniões, E-mails, Ligações, Updates de status
+- **Unit 3 · Meetings**: Participar, Conduzir, Discordar educadamente, Dar feedback, Apresentar ideias
+- **Unit 4 · Interviews**: Tell me about yourself, Pontos fortes/fracos, Método STAR, Why this role, Perguntas para o recrutador, Salário
+- **Unit 5 · Business Comm**: E-mails avançados, Estrutura de apresentações, Lidar com perguntas
+- **Unit 6 · Fluent**: Negociação, Conversas difíceis, Networking, Idioms, Conversa fluente
 
-## Arquivos
+### Outros idiomas
+Francês, Espanhol, Mandarim e Italiano com 8+ lições cada + simulações de ligação e entrevista.
 
-```
-index.html              → app principal
-manifest.webmanifest    → manifesto PWA
-sw.js                   → service worker
-icons/                  → ícones 192 / 512 / Apple
-```
+### Gamificação
+- XP, Streak, 7 ranks (Iniciante → Expert)
+- Muitas conquistas (badges)
+- Unidades organizadas
+- Simulações de ligação (incluindo entrevista e cliente)
+- Temas + PWA
 
-## Publicar no GitHub Pages
+## Como atualizar o repositório
 
-1. Settings → Pages → Source: branch `main`, pasta `/ (root)`
-2. Abra: `https://ewertoncr.github.io/APPidiomas-`
+O arquivo `index.html` expandido está disponível. Substitua o arquivo atual pelo novo `index.html` completo.
 
-> PWA e microfone precisam de **HTTPS** (GitHub Pages já fornece).
+Ou use GitHub Pages: Settings → Pages → Source: main / root
 
-## Instalar como app
+Link: https://ewertoncr.github.io/APPidiomas-/
 
-- **Android / Chrome:** banner “Instalar” ou menu → Instalar app  
-- **iPhone:** Compartilhar → Adicionar à Tela de Início  
-
-## Login Google
-
-O botão Google atual é **simulado**. Progresso fica no `localStorage`.  
-Para conta real + nuvem, use Supabase (Auth Google + tabela de progresso).
-
-## Idiomas e temas
-
-- Idiomas: EN · FR · ES · 中文 · IT  
-- Temas: Ocean, Midnight, Forest, Sunset, Neo, Minimal (em Opções)
+## Login
+Progresso fica no localStorage. Google login é simulado (pode integrar Supabase depois).
