@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="play">
+<html lang="pt" data-theme="play">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -11,8 +11,8 @@
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
-<link rel="stylesheet" href="./styles-play.css?v=1">
-<title>PolyWork — Aprenda idiomas jogando</title>
+<link rel="stylesheet" href="./styles-play.css?v=2">
+<title>PolyWork — Aprende idiomas a jogar</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="./content.js"></script>
 </head>
@@ -21,14 +21,18 @@
 <div class="login-screen" id="loginScreen">
   <div class="login-mascot" id="loginMascotSvg"></div>
   <div class="login-title">PolyWork</div>
-  <div class="login-sub">Aprenda idiomas jogando<br>Inglês · Francês · Espanhol · Mandarim · Italiano</div>
+  <div class="login-sub">Aprende idiomas a jogar<br>Inglês · Francês · Espanhol · Mandarim · Italiano</div>
   <button class="google-btn" onclick="loginWithGoogle()">Continuar com Google</button>
-  <button class="guest-btn" onclick="loginAsGuest()">Começar de graça 🚀</button>
+  <button class="guest-btn" onclick="loginAsGuest()">Começar grátis 🚀</button>
   <div class="login-features">
-    <div class="login-feat"><span>🎮</span> Aprenda como em um jogo</div>
-    <div class="login-feat"><span>🤖</span> Nova, sua assistente de idiomas</div>
+    <div class="login-feat"><span>🎮</span> Aprende como num jogo</div>
+    <div class="login-feat"><span>🤖</span> Nova, a tua assistente</div>
     <div class="login-feat"><span>🔊</span> Áudio em todas as frases</div>
-    <div class="login-feat"><span>👑</span> VIP por só R$ 9,90/mês</div>
+    <div class="login-feat"><span>👑</span> VIP mensal desde 2,99 €</div>
+  </div>
+  <div style="margin-top:18px;font-size:0.7rem;color:var(--muted);text-align:center">
+    <a href="./privacy-policy.html" style="color:inherit;margin:0 8px">Privacidade</a>·
+    <a href="./terms.html" style="color:inherit;margin:0 8px">Termos</a>
   </div>
 </div>
 <header id="mainHeader" class="hidden">
@@ -53,28 +57,28 @@
     <div class="mascot-bar" onclick="talkToMascot()">
       <div class="mascot-svg" id="mascotSvg"></div>
       <div class="mascot-speech">
-        <div class="mascot-name">NOVA · toque para falar</div>
-        <p id="mascotText">Oi! Eu sou a Nova. Escolha um idioma e vamos jogar!</p>
-        <div class="tap-hint">👆 Toque em mim para dicas</div>
+        <div class="mascot-name">NOVA · toca para falar</div>
+        <p id="mascotText">Olá! Eu sou a Nova. Escolhe um idioma e vamos jogar!</p>
+        <div class="tap-hint">👆 Toca em mim para dicas</div>
       </div>
       <div class="mascot-mood" id="mascotMood">😊</div>
     </div>
     <div class="vip-banner" id="vipBanner">
       <h3>👑 Seja VIP</h3>
-      <p>Desbloqueie todas as lições, idiomas e poderes</p>
-      <div class="price">R$ 9,90/mês</div>
-      <button class="btn" onclick="showVipModal()">Quero ser VIP</button>
+      <p>Desbloqueia todas as lições e poderes</p>
+      <div class="price">2,99 €/mês</div>
+      <button class="btn" onclick="showVipModal()">Quero o VIP</button>
     </div>
-    <div class="vip-active" id="vipActive" style="display:none">👑 Você é VIP · acesso total liberado</div>
+    <div class="vip-active" id="vipActive" style="display:none">👑 És VIP · acesso total liberado</div>
     <div class="card">
-      <div class="card-title">🌍 Escolha o idioma</div>
+      <div class="card-title">🌍 Escolhe o idioma</div>
       <div class="lang-grid" id="langGrid"></div>
     </div>
     <div class="rank-card">
       <div class="rank-icon" id="rankIcon">🌱</div>
       <div class="rank-info">
         <h3 id="rankName">Iniciante</h3>
-        <p id="rankDesc">Complete lições para subir</p>
+        <p id="rankDesc">Completa lições para subir</p>
         <div class="rank-bar"><div class="rank-fill" id="rankFill" style="width:0%"></div></div>
       </div>
     </div>
@@ -91,13 +95,13 @@
     <div id="dailyChest" style="margin-bottom:10px"></div>
     <div class="card">
       <div class="card-title">Continuar aventura</div>
-      <div class="card-sub" id="dailyGoalText">Complete 1 lição hoje</div>
+      <div class="card-sub" id="dailyGoalText">Completa 1 lição hoje</div>
       <div id="todayAction"></div>
     </div>
   </div>
   <div class="screen" id="screen-lessons">
     <h2 style="font-size:1.1rem;margin-bottom:4px;font-weight:900;text-align:center">🎮 Trilha · <span id="lessonsLangLabel">Inglês</span></h2>
-    <p style="text-align:center;font-size:0.75rem;color:var(--muted);margin-bottom:8px;font-weight:600">Toque na bolinha para jogar</p>
+    <p style="text-align:center;font-size:0.75rem;color:var(--muted);margin-bottom:8px;font-weight:600">Toca na bolinha para jogar</p>
     <div class="path-wrap" id="lessonsPath"></div>
   </div>
   <div class="screen" id="screen-player">
@@ -126,7 +130,7 @@
     <div class="vip-banner" id="vipBannerProfile" onclick="showVipModal()" style="cursor:pointer">
       <h3>👑 Upgrade VIP</h3>
       <p>Acesso total por apenas</p>
-      <div class="price">R$ 9,90/mês</div>
+      <div class="price">2,99 €/mês</div>
     </div>
     <div class="card">
       <div class="card-title">Estatísticas</div>
@@ -148,7 +152,11 @@
       <div class="card-title">🛒 Loja</div>
       <div id="shopList"></div>
     </div>
-    <button class="btn btn-ghost" onclick="logout()" style="margin-top:8px">Sair</button>
+    <p style="text-align:center;font-size:0.7rem;color:var(--muted);margin:12px 0">
+      <a href="./privacy-policy.html" style="color:inherit">Privacidade</a> ·
+      <a href="./terms.html" style="color:inherit">Termos</a>
+    </p>
+    <button class="btn btn-ghost" onclick="logout()">Sair</button>
   </div>
 </main>
 <nav id="mainNav" class="hidden">
@@ -185,23 +193,25 @@
   <div class="vip-modal-card">
     <div style="font-size:2.5rem">👑</div>
     <h2>PolyWork VIP</h2>
-    <div class="price-big">R$ 9,90<span style="font-size:0.9rem;-webkit-text-fill-color:var(--muted)">/mês</span></div>
+    <p style="font-size:0.85rem;color:var(--muted);font-weight:600;margin-bottom:8px">Desbloqueia tudo. Cancela quando quiseres.</p>
     <div class="vip-perks">
       <div>✅ Todas as lições e trilhas</div>
       <div>✅ 5 idiomas completos</div>
       <div>✅ Prática de fala ilimitada</div>
-      <div>✅ Missões e ligas sem limite</div>
-      <div>✅ Badge VIP exclusivo</div>
+      <div>✅ Missões, ligas e baús</div>
+      <div>✅ Sem limites de progresso</div>
     </div>
-    <button class="btn btn-primary" onclick="activateVip()" style="margin-bottom:8px">Assinar agora</button>
+    <button class="btn btn-primary" onclick="activateVip('monthly')" style="margin-bottom:8px">Mensal · 2,99 €/mês</button>
+    <button class="btn btn-ghost" onclick="activateVip('yearly')" style="margin-bottom:8px;border-color:var(--gold)">Anual · 24,99 € <span style="font-size:0.7rem;opacity:0.8">(~2,08 €/mês)</span></button>
     <button class="btn btn-ghost" onclick="closeVipModal()">Continuar grátis</button>
-    <p style="font-size:0.65rem;color:var(--muted);margin-top:10px">Demo: assinatura simulada neste app</p>
+    <p style="font-size:0.65rem;color:var(--muted);margin-top:10px">Na Google Play a cobrança será real. Aqui é demonstração.</p>
+    <p style="font-size:0.65rem;margin-top:6px"><a href="./terms.html" style="color:var(--muted)">Termos</a> · <a href="./privacy-policy.html" style="color:var(--muted)">Privacidade</a></p>
   </div>
 </div>
 <div class="toast" id="toast"></div>
-<script src="./game-extra.js?v=play2"></script>
-<script src="./vip-mascot.js?v=play2"></script>
-<script src="./app-logic.js?v=play2"></script>
+<script src="./game-extra.js?v=play3"></script>
+<script src="./vip-mascot.js?v=play3"></script>
+<script src="./app-logic.js?v=play3"></script>
 <script>
 (function(){
   document.documentElement.setAttribute('data-theme','play');
