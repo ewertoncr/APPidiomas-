@@ -98,6 +98,7 @@ header {
 }
 .hstat.xp { color: var(--xp); }
 .hstat.streak { color: #fb923c; }
+.hstat.gems { color: #38bdf8; }
 .user-pill {
   display: flex; align-items: center; gap: 6px;
   background: var(--card2); border-radius: 24px; padding: 4px 10px 4px 4px;
@@ -185,10 +186,7 @@ main { flex: 1; padding: 12px 14px; overflow-y: auto; }
   text-transform: uppercase; letter-spacing: 0.6px;
   margin: 18px 0 12px; text-align: center;
 }
-.path {
-  display: flex; flex-direction: column; align-items: center; gap: 0;
-  position: relative;
-}
+.path { display: flex; flex-direction: column; align-items: center; gap: 0; position: relative; }
 .path-node {
   width: 72px; height: 72px; border-radius: 50%;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -197,10 +195,7 @@ main { flex: 1; padding: 12px 14px; overflow-y: auto; }
   transition: all 0.2s; box-shadow: 0 4px 0 rgba(0,0,0,0.25);
 }
 .path-node:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(0,0,0,0.25); }
-.path-node.done {
-  border-color: var(--accent); background: var(--accent-dim);
-  box-shadow: 0 4px 0 rgba(34,197,94,0.35);
-}
+.path-node.done { border-color: var(--accent); background: var(--accent-dim); box-shadow: 0 4px 0 rgba(34,197,94,0.35); }
 .path-node.current {
   border-color: var(--primary); background: var(--primary-dim);
   box-shadow: 0 4px 0 rgba(91,138,255,0.4);
@@ -211,9 +206,7 @@ main { flex: 1; padding: 12px 14px; overflow-y: auto; }
   0%,100% { box-shadow: 0 4px 0 rgba(91,138,255,0.4); }
   50% { box-shadow: 0 4px 0 rgba(91,138,255,0.4), 0 0 0 10px rgba(91,138,255,0.12); }
 }
-.path-connector {
-  width: 6px; height: 28px; background: var(--border); z-index: 1;
-}
+.path-connector { width: 6px; height: 28px; background: var(--border); z-index: 1; }
 .path-connector.done { background: var(--accent); }
 .path-node-label {
   font-size: 0.62rem; font-weight: 700; margin-top: 2px; max-width: 90px;
@@ -226,20 +219,14 @@ main { flex: 1; padding: 12px 14px; overflow-y: auto; }
   padding: 2px 5px; border-radius: 8px;
 }
 .path-node.done .path-node-xp { background: var(--accent); color: #111; }
-.player-header {
-  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
-}
+.player-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
 .player-close {
   width: 36px; height: 36px; border-radius: 50%; border: none;
   background: var(--card2); color: var(--muted); font-size: 1.1rem; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
 }
-.player-progress-wrap {
-  flex: 1; height: 12px; background: var(--card2); border-radius: 8px; overflow: hidden;
-}
-.player-progress {
-  height: 100%; background: var(--grad); border-radius: 8px; transition: width 0.35s ease;
-}
+.player-progress-wrap { flex: 1; height: 12px; background: var(--card2); border-radius: 8px; overflow: hidden; }
+.player-progress { height: 100%; background: var(--grad); border-radius: 8px; transition: width 0.35s ease; }
 .player-hearts { font-size: 0.95rem; letter-spacing: 1px; }
 .section-type {
   font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px;
@@ -377,3 +364,64 @@ main { flex: 1; padding: 12px 14px; overflow-y: auto; }
   max-width: 90%; text-align: center; pointer-events: none;
 }
 .toast.show { opacity: 1; }
+.quest-item {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--card2); border-radius: 12px; padding: 10px;
+  margin-bottom: 7px; border: 1px solid var(--border);
+}
+.quest-item.done { border-color: var(--accent); }
+.quest-icon { font-size: 1.3rem; width: 32px; text-align: center; }
+.quest-body { flex: 1; min-width: 0; }
+.quest-text { font-size: 0.8rem; font-weight: 650; margin-bottom: 4px; }
+.quest-bar { height: 5px; background: var(--card); border-radius: 3px; overflow: hidden; }
+.quest-fill { height: 100%; background: var(--grad); border-radius: 3px; transition: width 0.3s; }
+.quest-meta { font-size: 0.62rem; color: var(--muted); margin-top: 3px; }
+.btn-claim {
+  background: var(--accent); color: #111; border: none; border-radius: 10px;
+  padding: 7px 10px; font-size: 0.72rem; font-weight: 800; cursor: pointer; white-space: nowrap;
+}
+.quest-claimed { color: var(--accent); font-weight: 800; font-size: 1rem; }
+.league-row { display: flex; align-items: center; gap: 12px; }
+.league-icon { font-size: 2rem; }
+.league-info { flex: 1; }
+.league-info h3 { font-size: 0.9rem; font-weight: 700; }
+.league-info p { font-size: 0.72rem; color: var(--muted); margin-bottom: 4px; }
+.shop-item {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--card2); border-radius: 12px; padding: 11px;
+  margin-bottom: 7px; border: 1px solid var(--border);
+}
+.shop-icon { font-size: 1.4rem; width: 36px; text-align: center; }
+.shop-body { flex: 1; }
+.shop-body h4 { font-size: 0.84rem; font-weight: 700; }
+.shop-body p { font-size: 0.68rem; color: var(--muted); }
+.btn-shop {
+  background: var(--primary-dim); color: var(--primary); border: 1px solid var(--primary);
+  border-radius: 10px; padding: 7px 11px; font-size: 0.75rem; font-weight: 800; cursor: pointer;
+}
+.chest { text-align: center; padding: 14px; border-radius: 14px; font-weight: 700; font-size: 0.9rem; }
+.chest.open {
+  width: 100%; border: 2px dashed var(--gold); background: var(--gold-dim);
+  color: var(--gold); cursor: pointer;
+}
+.chest.claimed { background: var(--card2); color: var(--muted); border: 1px solid var(--border); }
+.combo-badge {
+  position: fixed; top: 70px; right: 16px; z-index: 90;
+  background: var(--primary); color: #fff; font-weight: 800; font-size: 0.85rem;
+  padding: 6px 12px; border-radius: 20px; display: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); animation: popIn 0.25s ease;
+}
+.combo-badge.show { display: block; }
+.level-up {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 450;
+  display: none; align-items: center; justify-content: center; padding: 24px;
+}
+.level-up.show { display: flex; }
+.level-up-card {
+  background: var(--card); border-radius: 22px; padding: 32px 24px; text-align: center;
+  max-width: 320px; width: 100%; border: 2px solid var(--gold);
+  animation: popIn 0.4s ease;
+}
+.level-up-icon { font-size: 3.5rem; margin-bottom: 8px; }
+.level-up-title { font-size: 0.8rem; color: var(--gold); font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.level-up-name { font-size: 1.5rem; font-weight: 800; margin: 6px 0 16px; }
